@@ -8,12 +8,18 @@ gem 'rails', '~> 5.1.4'
    gem 'pg'
    gem 'rails_12factor'
  end
- 
+
  # #2
  group :development do
    gem 'sqlite3'
  end
- 
+
+group :development, :test do
+   gem 'rspec-rails', '~> 3.0'
+end
+
+gem 'rails-controller-testing'
+
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
 # Use Puma as the app server
