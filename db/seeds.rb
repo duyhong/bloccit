@@ -32,3 +32,7 @@ require 'random_data'
  puts "Seed finished"
  puts "#{Post.count} posts created"
  puts "#{Comment.count} comments created"
+
+ unique_post = posts.find_or_create_by!(title: "The added unique post", body: "The added unique body")
+
+ Comment.find_or_create_by!(post: unique_post, body: "The added unique comment")
