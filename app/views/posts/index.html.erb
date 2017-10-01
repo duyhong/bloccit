@@ -1,6 +1,7 @@
 <h1>All Posts</h1>
 
-<% @posts.each do |post| %>
+<% @posts.each_with_index do |post, i| %>
+  <% post.title += "SPAM" if i % 5 == 0 %>
   <div class="media">
      <div class="media-body">
        <h4 class="media-heading">
