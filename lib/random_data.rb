@@ -24,4 +24,12 @@ module RandomData
      letters.shuffle!
      letters[0,rand(3..8)].join
    end
+
+   def self.random_number
+     num = 0
+     3.times do |n|
+       num += rand(0..9) * 10**(n)
+     end
+     num
+   end
 end
