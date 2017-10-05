@@ -1,25 +1,25 @@
 class AdvertisementController < ApplicationController
   def index
-    @advertisements = Advertisement.all
+    @ads = Advertisement.all
   end
 
   def show
-    @advertisement = Advertisement.find(params[:id])
+    @ad = Advertisement.find(params[:id])
   end
 
   def new
-    @advertisement = Advertisement.new
+    @ad = Advertisement.new
   end
 
   def create
-    @advertisement = Advertisement.new
-    @advertisement.title = params[:advertisement][:title]
-    @advertisement.body = params[:advertisement][:body]
-    @advertisement.price = params[:advertisement][:price]
+    @ad = Advertisement.new
+    @ad.title = params[:advertisement][:title]
+    @ad.body = params[:advertisement][:body]
+    @ad.price = params[:advertisement][:price]
 
-    if @advertisement.save
+    if @ad.save
       flash[:notice] = "Advertisement was saved."
-      redirect_to @advertisement
+      redirect_to @ad
     else
       flash.now[:alert] = "There was an error saving the advertisement. Please try again."
       render :new
