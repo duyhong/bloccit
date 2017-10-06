@@ -17,7 +17,7 @@ class PostsController < ApplicationController
      @post.title = params[:post][:title]
      @post.body = params[:post][:body]
 
-     if @post.save
+     if @post.save  # insert command
        flash[:notice] = "Post was saved."
        redirect_to @post
      else
