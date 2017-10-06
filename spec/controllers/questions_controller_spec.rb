@@ -9,10 +9,10 @@ RSpec.describe QuestionsController, type: :controller do
       expect(response).to have_http_status(:success)
     end
 
-    # it "assigns [my_question] to @questions" do
-    #   get :index
-    #   expect(assigns(:questions)).to eq([my_question])
-    # end
+    it "assigns [my_question] to @questions" do
+      get :index
+      expect(assigns(:questions)).to eq([my_question])
+    end
   end
 
   describe "GET #show" do
@@ -50,24 +50,24 @@ end
   end
 end
 
-# describe "Question create" do
-# # #4
-#   it "increases the number of Question by 1" do
-#     expect{question :create, params: {question: {title: RandomData.random_sentence, body: RandomData.random_paragraph, resolved: RandomData.random_boolean}}}.to change(Question,:count).by(1)
-#   end
-#
-# # #5
-#   it "assigns the new question to @question" do
-#     question :create, params: {question: {title: RandomData.random_sentence, body: RandomData.random_paragraph, resolved: RandomData.random_boolean}}
-#     expect(assigns(:question)).to eq Question.last
-#   end
-#
-# # #6
-#   it "redirects to the new question" do
-#     question :create, params: {question: {title: RandomData.random_sentence, body: RandomData.random_paragraph, resolved: RandomData.random_boolean}}
-#     expect(response).to redirect_to Question.last
-#   end
-# end  #
+describe "Question create" do
+# #4
+  it "increases the number of Questions by 1" do
+    expect{post :create, params: {question: {title: RandomData.random_sentence, body: RandomData.random_paragraph, resolved: RandomData.random_boolean}}}.to change(Question,:count).by(1)
+  end
+
+# #5
+  it "assigns the new question to @question" do
+    post :create, params: {question: {title: RandomData.random_sentence, body: RandomData.random_paragraph, resolved: RandomData.random_boolean}}
+    expect(assigns(:question)).to eq Question.last
+  end
+
+# #6
+  it "redirects to the new question" do
+    post :create, params: {question: {title: RandomData.random_sentence, body: RandomData.random_paragraph, resolved: RandomData.random_boolean}}
+    expect(response).to redirect_to Question.last
+  end
+end  #
 
 describe "GET edit" do
   it "returns http success" do
