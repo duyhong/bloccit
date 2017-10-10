@@ -9,32 +9,43 @@
 require 'random_data'
 
 # Create Topics
-15.times do
-  Topic.create!(
-    name:         RandomData.random_sentence,
-    description:  RandomData.random_paragraph
-  )
-end
+# 15.times do
+#   Topic.create!(
+#     name:         RandomData.random_sentence,
+#     description:  RandomData.random_paragraph
+#   )
+# end
 topics = Topic.all
 
  # Create Posts
- 50.times do
- # #1
-   Post.create!(
-     topic:  topics.sample,
-     title:  RandomData.random_sentence,
-     body:   RandomData.random_paragraph
-   )
- end
- posts = Post.all
+ # 50.times do
+ # # #1
+ #   Post.create!(
+ #     topic:  topics.sample,
+ #     title:  RandomData.random_sentence,
+ #     body:   RandomData.random_paragraph
+ #   )
+ # end
+ # posts = Post.all
 
  # Create Comments
  # #3
- 100.times do
-   Comment.create!(
- # #4
-     post: posts.sample,
-     body: RandomData.random_paragraph
+ # 100.times do
+ #   Comment.create!(
+ # # #4
+ #     post: posts.sample,
+ #     body: RandomData.random_paragraph
+ #   )
+ # end
+
+ # Create Sponsored Posts
+ 50.times do
+ # #1
+   SponsoredPost.create!(
+     topic:  topics.sample,
+     title:  RandomData.random_sentence,
+     body:   RandomData.random_paragraph,
+     price:   RandomData.random_num
    )
  end
 
@@ -54,6 +65,7 @@ topics = Topic.all
 
  puts "Seed finished"
  puts "#{Topic.count} topics created"
- puts "#{Post.count} posts created"
- puts "#{Comment.count} comments created"
+ # puts "#{Post.count} posts created"
+ # puts "#{Comment.count} comments created"
+ puts "#{SponsoredPost.count} sponsored posts created"
 #puts "#{Question.count} questions created"
