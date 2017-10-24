@@ -41,6 +41,7 @@ require 'random_data'
    # Create Comments
    100.times do
      Comment.create!(
+       user: users.sample,
        post: posts.sample,
        body: RandomData.random_paragraph
      )
@@ -74,6 +75,14 @@ require 'random_data'
     email:    'member@example.com',
     password: 'helloworld'
   )
+
+  # # Create a moderator
+  # member = User.create!(
+  #   name:     'Moderator User',
+  #   email:    'moderator@example.com',
+  #   password: 'helloworld',
+  #   role:     'moderator'
+  # )
 
    puts "Seed finished"
    puts "#{User.count} users created"
