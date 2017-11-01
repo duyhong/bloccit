@@ -19,8 +19,36 @@
   </div>
 </div>
 
-<h2>Posts</h2>
-<%= render @user.posts %>
+<% if output = no_posts_or_comments? %>
+  <%= output %>
+<% else %>
+  <h2>Posts</h2>
+  <%= render @user.posts %>
 
-<h2>Comments</h2>
-<%= render @user.comments %>
+  <h2>Comments</h2>
+  <%= render @user.comments %>
+<% end %>
+
+<div class="media">
+  <h2> Favorited Posts</h2>
+  <% @user.posts.each do |post| %>
+    <% if current_user.favorite_for(post) %>
+      <%= render partial: 'votes/voting', locals: { post: post } %>
+      <div class="media-body">
+        <h4 class="media-heading">
+          <%= link_to post.title, topic_post_path(post.topic, post) %>
+        </h4>
+      </div>
+      <div class="user-info">
+          <% user = User.where(id: post.user_id) %>
+          <%= image_tag user.avatar_url(48), class: "gravatar" %>
+          <div class="pull-right">
+            <small>
+              <%= post.votes.count %> Votes <br>
+              <%= post.comments.count %> Comments
+            </small>
+          </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

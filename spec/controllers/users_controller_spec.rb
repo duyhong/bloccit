@@ -1,14 +1,15 @@
 require 'rails_helper'
 
 RSpec.describe UsersController, type: :controller do
-  let(:new_user_attributes) do
-    {
-        name: "BlocHead",
-        email: "blochead@bloc.io",
-        password: "blochead",
-        password_confirmation: "blochead"
-    }
-  end
+  let(:new_user_attributes) { create(:user) }
+  # let(:new_user_attributes) do
+  #   {
+  #       name: "BlocHead",
+  #       email: "blochead@bloc.io",
+  #       password: "blochead",
+  #       password_confirmation: "blochead"
+  #   }
+  # end
 
   describe "GET new" do
     it "returns http success" do

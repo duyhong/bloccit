@@ -1,16 +1,22 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-  let(:name) { RandomData.random_sentence }
-  let(:description) { RandomData.random_paragraph }
-  let(:title) { RandomData.random_sentence }
-  let(:body) { RandomData.random_paragraph }
+  # let(:name) { RandomData.random_sentence }
+  # let(:description) { RandomData.random_paragraph }
+  # let(:title) { RandomData.random_sentence }
+  # let(:body) { RandomData.random_paragraph }
+  #
+  # let(:topic) { Topic.create!(name: name, description: description) }
+  #
+  # let(:user) { User.create!(name: "Bloccit User", email: "user@bloccit.com", password: "helloworld") }
+  #
+  # let(:post) { topic.posts.create!(title: title, body: body, user: user) }
 
-  let(:topic) { Topic.create!(name: name, description: description) }
+  let(:topic) { create(:topic) }
+  let(:user) { create(:user) }
+  let(:user) { create(:user) }
+  let(:post) { create(:post, topic: topic, user: user) }
 
-  let(:user) { User.create!(name: "Bloccit User", email: "user@bloccit.com", password: "helloworld") }
-
-  let(:post) { topic.posts.create!(title: title, body: body, user: user) }
 
   it { is_expected.to have_many(:comments) }
   it { is_expected.to have_many(:votes) }
