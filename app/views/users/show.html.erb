@@ -33,21 +33,25 @@
   <h2> Favorited Posts</h2>
   <% @user.posts.each do |post| %>
     <% if current_user.favorite_for(post) %>
-      <%= render partial: 'votes/voting', locals: { post: post } %>
-      <div class="media-body">
-        <h4 class="media-heading">
+      <div>
+        <%= render partial: 'votes/voting', locals: { post: post } %>
+      </div>
+      <div class="post-title col-md-4">
+        <h4>
           <%= link_to post.title, topic_post_path(post.topic, post) %>
         </h4>
       </div>
-      <div class="user-info">
-          <% user = User.where(id: post.user_id) %>
-          <%= image_tag user.avatar_url(48), class: "gravatar" %>
-          <div class="pull-right">
-            <small>
-              <%= post.votes.count %> Votes <br>
-              <%= post.comments.count %> Comments
-            </small>
-          </div>
+      <div class="user-info col-md-4">
+        <div class="vert-align pull-left">
+            <!-- <% user = User.find(post.user_id) %> -->
+            <%= image_tag User.find(post.user_id).avatar_url(48), class: "gravatar" %>
+        </div>
+        <div class="vert-align-mid pull-left">
+          <small>
+            <%= post.votes.count %> Votes <br>
+            <%= post.comments.count %> Comments
+          </small>
+        </div>
       </div>
     <% end %>
   <% end %>
