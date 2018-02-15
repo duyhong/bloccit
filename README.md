@@ -1,8 +1,8 @@
 # Bloccit
 
-![Bloccit Topic](../master/screenshots/bloccit_topic.png)
-
  A [Reddit](http://www.reddit.com/) replica where people can post, vote on, share and save links and comments. Bloccit will have many features needed to make it a cool web app.
+
+ ![Bloccit Topic](../master/screenshots/bloccit_topic.png)
 
 ## Configuration
 ### Mac and Linux Users
