@@ -30,7 +30,7 @@ For now, go to [c9.io](https://c9.io/) and sign up for a free account to use Clo
   Start by cloning the repository:
 
   ```
-  $ git clone https://github.com/duyhong/bloccit.git bloccit
+  $ git clone https://github.com/duyhong/bloccit.git <your-project-name>
   ```
 
 ### Reset Git
