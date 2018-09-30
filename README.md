@@ -7,7 +7,7 @@
 ## Configuration
 ### Mac and Linux Users
 
-Most tools related to Ruby on Rails (commonly referred to as "Rails") are optimized for Unix-based operating systems, like OS X and Linux. If you are using a Unix-based operating system, I advise you to create a local developer environment. This means you'll install software on your computer, and won't use a virtual machine or a cloud service.
+Most tools related to Ruby on Rails (commonly referred to as "Rails") are optimized for Unix-based operating systems, like OS X and Linux. If you are using a Unix-based operating system, we advise you to create a local developer environment. This means you'll install software on your computer, and won't use a virtual machine or a cloud service.
 
 Because many installation instructions are dependent on the version of your OS, I'll refer you to the instructions on [Install Rails](http://installrails.com/), which will provide you with customized installation steps. Follow the instructions, stopping at the section on Sublime Text.
 
@@ -43,7 +43,7 @@ For now, go to [c9.io](https://c9.io/) and sign up for a free account to use Clo
    $ rm -r -f .git
    ```
 
-### Update the Application
+## Run the Application
 
  You  must update the application with  `bundle install`
 
@@ -60,6 +60,6 @@ For now, go to [c9.io](https://c9.io/) and sign up for a free account to use Clo
  ```
  The server will start up. To stop the server, press `ctrl + c`.
 
- Once the rails server started, you can open your browser and access Bloccit at `localhost:3000`
+ One the rails server started, you can open your browser and access Bloccit at localhost:3000
 
  ![Bloccit Topic](../master/screenshots/bloccit.png)
