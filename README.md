@@ -4,7 +4,7 @@
 
  ![Bloccit Topic](../master/screenshots/bloccit.png)
 
- [Explore Bloccit](https://obscure-scrubland-49806.herokuapp.com/)
+ ### [Explore Bloccit](https://obscure-scrubland-49806.herokuapp.com/)
 
 ## Configuration
 ### Mac and Linux Users
