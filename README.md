@@ -2,7 +2,9 @@
 
  A [Reddit](http://www.reddit.com/) replica where people can post, vote on, share and save links and comments. Bloccit will have many features needed to make it a cool web app.
 
- ![Bloccit Topic](../master/screenshots/bloccit_topic.png)
+ ![Bloccit Topic](../master/screenshots/bloccit.png)
+
+ [Explore Bloccit](https://obscure-scrubland-49806.herokuapp.com/)
 
 ## Configuration
 ### Mac and Linux Users
@@ -61,5 +63,3 @@ For now, go to [c9.io](https://c9.io/) and sign up for a free account to use Clo
  The server will start up. To stop the server, press `ctrl + c`.
 
  One the rails server started, you can open your browser and access Bloccit at localhost:3000
-
- ![Bloccit Topic](../master/screenshots/bloccit.png)
